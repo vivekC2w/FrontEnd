@@ -1,0 +1,95 @@
+<!--
+    The <input> tag specifies an input field where the user can enter data. 
+    The <input> element is the most important form element. The <input> element 
+    can be displayed in several ways, depending on the type attribute.
+
+Your task is to create 14 different input tags, each having a different id and 
+a set of attributes in each of them.
+The input tag's ids and which id must have which attributes and attribute values are 
+mentioned below.
+
+id="value-attr", Attributes
+value="mohan" , type="text"
+
+
+id="readonly-attr", Attributes
+value="rahul" , readonly , type="text"
+
+
+id="disabled-attr" , Attributes
+value="karan" , disabled , type="text"
+
+
+id="maxlength-attr" , Attributes
+maxlength="4" , size="4" , type="text"
+
+
+id="min-max-attr" , Attributes
+min="2" , max="5" , type="number"
+
+
+id="multiple-attr", Attributes
+multiple , type="file"
+
+
+id="pattern-attr" , Attributes
+pattern="[A-Za-z]{3}" , type="text"
+
+
+id="placeholder-attr", Attributes
+placeholder="123-45-678" , type="tel"
+
+
+id="required-attr" , Attributes
+required , type="text"
+
+
+id="step-attr" , Attributes
+step="3",type="number" , type="number"
+
+
+id="autofocus-attr" , Attributes
+autofocus , type="text"
+
+
+id="height-width-attr" , Attributes
+type="image",src="https://st4.depositphotos.com/1642482/21870/i/1600/depositphotos_218703080-stock-photo-red-apple-isolated-on-white.jpg", width="50" , height="50" , type="image"
+
+
+id="autocomplete-attr" , Attributes
+autocomplete="on" , type="email"
+
+
+An <input> tag having id="list-input" and attribute list="list-dataset-attr" 
+and a <datalist> tag having id="list-dataset-attr" and inside the <datalist> tag 
+there are 3 <option> tag having values Peaches , Mango, Guava
+-->
+
+<!-- html code goes here -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input Tags Example</title>
+</head>
+<body>
+    <input id="value-attr" value="mohan" type="text">
+    <input id="readonly-attr" value="rahul" readonly type="text">
+    <input id="disabled-attr" value="karan" disabled type="text">
+    <input id="maxlength-attr" maxlength="4" size="4" type="text">
+    <input id="min-max-attr" min="2" max="5" type="number">
+    <input id="multiple-attr" multiple type="file"> 
+    <input id="pattern-attr" pattern="[A-Za-z]{3}" type="text">
+    <input id="placeholder-attr" placeholder="123-45-678" type="tel">
+    <input id="required-attr" required type="text">
+    <input id="step-attr" step="3" type="number">
+    <input id="autofocus-attr" autofocus type="text">
+    <input id="height-width-attr" type="image" src="https://st4.depositphotos.com/1642482/21870/i/1600/depositphotos_218703080-stock-photo-red-apple-isolated-on-white.jpg" width="50" height="50">
+    <input id="autocomplete-attr" autocomplete="on" type="email">
+    <input id="list-input" list="list-dataset-attr" type="text">
+    <datalist id="list-dataset-attr">
+        <option value="Peaches">
+        <option value="Mango">
+        <option value="Guava">
+    </datalist>
+</body>
+</html>
