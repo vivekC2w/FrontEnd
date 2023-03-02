@@ -1,0 +1,48 @@
+<!--HTML Feedback form
+Create a form with the heading "Feedback Form" with the following elements, and use the 
+appropriate type required. The form needs to be submitted with a POST method.
+
+Element for getting the name with the id "name", which must have at least 3 characters 
+and a maximum of 50 characters to be valid. This is a required field.
+
+The element with the id "portfolio" is used to take the URL of the user's webpage.
+
+In order for the form to be submitted, the Name and Portfolio entries must have 
+the relevant attribute.
+
+The element with the id "favColor" allows the user to select their favourite colour.
+
+A slider element with an id="likeness" that has a minimum value of one and a maximum 
+value of 100 for determining how much they like their color.
+
+All input elements must have labels with the for property set to the ids of the elements 
+to which they belong.
+
+Lastly, create a button of type submit with the text Submit.
+
+Example label for input of name will be <label for="name">Name</label>
+-->
+
+<form method="POST" action="/">
+    <h1>Feedback Form</h1>
+    
+    <label for="name">Your name</label>
+    <input type="text" id="name" name="name" minlength="3" maxlength="50" required/>
+    <br />
+    <label for="portfolio">Your portfolio</label>
+    <input type="url" id="portfolio" name="portfolio" required/>
+    <br />
+    <label for="favColor">Your fav color</label>
+    <select id="favColor" name="favColor">
+      <option value="red" style="color : red;">Red</option>
+      <option value="blue" style="color : blue;">Blue</option>
+      <option value="green" style="color : green;">Green</option>
+      <option value="yellow" style="color : yellow;">Yellow</option>
+      <option value="orange" style="color : orange;">Orange</option>
+    </select>
+    <br />
+    <label for="likeness">From one to hundred choose likeness</label>
+    <input type="range" id="likeness" name="likeness" min="1" max="100"/>
+    <br />
+    <button type="submit">Submit</button>
+  </form>

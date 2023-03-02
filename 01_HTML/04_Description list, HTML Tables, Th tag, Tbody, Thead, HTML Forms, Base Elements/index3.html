@@ -1,0 +1,50 @@
+<!--
+    We serve a lot of delicious pizza, but we were never able to collect feedback from 
+    the customers :(
+Can you please make us a feedback form, it would be a great help for us ;)
+
+For the test cases to get passed
+The feedback form should contain the following input fields:
+
+Input of type text with id #text, this will be a required field.
+
+Input of type textarea with id #message, this will be a required field.
+
+Input of type email with id #email, this will be a required field.
+
+Input of type number with id #rate and range 0-5.
+
+A button with id #submit.
+
+
+
+Note: Every input must have a label with id #{inputid}-label. For example,
+
+for the input field of id rate the label should have the id as rate-label,
+
+for the input field of id text, the label should have the id as text-label.
+-->
+
+<form>
+    <div>
+      <label for="text" id="text-label">Enter your name:</label>
+      <input type="text" id="text" name="text" required>
+    </div>
+  
+   <div>
+      <label for="email" id="email-label">Your email address:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+  
+    <div>
+      <label for="message" id="message-label">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+    </div>
+  
+    <div>
+      <label for="rate" id="rate-label">How did you like your pizza?</label>
+      <input type="number" id="rate" name="rate" min="0" max="5">
+    </div>
+  
+    <button type="submit" id="submit">Submit</button>
+  </form>

@@ -1,0 +1,30 @@
+/* css code goes here */
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+  }
+  
+  th {
+    background-color: #f93333;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ee5555;
+  }
+  
+  td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #d18e8e;
+  }
+  
+  tbody tr:nth-child(odd) {
+    background-color: #e99595;
+  }
+  
+  tbody tr:hover {
+    background-color: #FFFFCC;
+  }
