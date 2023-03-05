@@ -1,0 +1,61 @@
+<!-- Schedule with Lists
+You are tired of not being able to do your tasks on time so this time you decided to make a list of all the tasks you want to do in a day.
+Using HTML Lists you decided to make 3 lists, each of a different type , one ordered list, one unordered List, and one descriptive list
+
+In Ordered List
+
+its id is #ordered-parent
+list items will be numbered with uppercase letters
+It has four items named get up in the morning, shopping, Newton School Assignment, Dinner
+The item named shopping contains an ordered list having id #ordered-child. Its items will be numbered with lowercase letters and it contains two items groceries, Drinks.
+
+
+
+In Unordered List
+
+its id is #unordered-parent
+It contains three items Coffee, Fruits, Milk
+The item Fruits contain an unordered List having id #unordered-chid and it contains items Banana, Pineapple
+
+
+In Descriptive List
+
+its id is #descriptive-list
+It contains the description term Black Drink which has description data Coca Cola and Pepsi
+It contains the description term Orange Drink which has description data which is Mirinda, Fanta -->
+
+<!-- html code goes here -->
+<h1>Works to do</h1>
+<ol id="ordered-parent" type="A">
+    <li>getup in morning</li>
+    <li>
+        Shopping
+        <ol id="ordered-child" type="a">
+            <li>groceries</li>
+            <li>Drinks</li>
+        </ol>
+    </li>
+    <li>Newton School Assignment</li>
+    <li>Dinner</li>
+</ol>
+
+<h1>Groceries list</h1>
+<ul id="unordered-parent">
+    <li>Coffee</li>
+    <li>
+        Fruits
+        <ul id="unordered-child">
+            <li>Banana</li>
+            <li>Pineapple</li>
+        </ul>
+    </li>
+    <li>Milk</li>
+</ul>
+
+<h1>Drinks List</h1>
+<dl id="descriptive-list">
+    <dt>Black Drink</dt>
+    <dd>Coca Cola and Pepsi</dd>
+    <dt>Orange Drink</dt>
+    <dd>Mirinda, Fanta</dd>
+</dl>

@@ -1,0 +1,84 @@
+<!-- list in tables with forms
+You have to do two tasks
+Task 1
+
+create a form that has two input fields for first name and second name and one button for 
+submitting the form.
+There are two labels,the first label contains text First name and second label contains 
+text Last name
+The id of first input field for first name is #fname and type is text
+The id of second input field for last name is #lname and type is text
+The id of button for submit button is #submit and type is submit
+
+Task 2
+
+There are 3 groups each having 3 members and a budget in numbers.
+Group 1 has Hira, Kamal, Rajnesh having a budget of 1600
+Group 2 has Rahul, Piyush, Om has a budget of 1400
+Group 3 has Jatin, Karan, Brijesh having budget 1000
+Your Task is to represent this data in the table where Group 1, Group 2, Group 3 are 
+table headings
+The names are written together in an unordered list which is in the table data tag inside 
+the table row in table tag
+The budget is written in the third table row in the table data tag
+Check out the image below by increasing the question screen size. -->
+
+<!-- html code goes here -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Job App Form</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+<tbody>
+<form>
+    <label for="name">First name:</label><br>
+    <input type="text" id="fname" name="fname"><br><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname"><br><br>
+    <input type="submit" value="Submit" id="submit"><br><br>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>Group 1</th>
+            <th>Group 2</th>
+            <th>Group 3</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <ul>
+                    <li>Hira</li>
+                    <li>Kamal</li>
+                    <li>Rajnesh</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Rahul</li>
+                    <li>Piyush</li>
+                    <li>Om</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Jatin</li>
+                    <li>Karan</li>
+                    <li>Brijesh</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>1000</td>
+            <td>1400</td>
+            <td>1000</td>
+        </tr>
+    </tbody>
+</table>
+</tbody>
+</html> 
