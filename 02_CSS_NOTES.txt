@@ -1,0 +1,54 @@
+<-------------------Types Of CSS-------------->
+
+Inline CSS - Advantage - Very Very Fast
+		Disadvantage - Reusabilty
+
+Internal CSS - Adv - Reusabilty
+		Disadv - Slower than Inline CSS and Faster than External CSS
+			We can not reuse code across pages
+
+External CSS - Adv - Reusabilty across platforms and pages
+		Disadvantage - Slow  
+
+
+<-------------------------SELECTORS------------------------------->
+Selector - Tells the browser which HTML elements should be selected to have the CSS property values inside the
+rule applied to them
+
+Types Of Selector
+
+------Names Selector--------
+h1 {
+	color: red;
+}
+
+------ID Selector-----------
+index.html
+<body>
+	<h1>Heading 1</h1>
+	<h1>Heading 2</h1>
+	<h1>Heading 3</h1>
+	<h1>Heading 4</h1>
+	<h1 id="heading5">Heading 5</h1>
+</body>
+
+style.css
+#heading5 {
+    color: aqua;
+}
+
+------Class Selector--------
+
+index.html
+<h1 class="fruit">Mango</h1>
+<h1 class="fruit">Apple</h1>
+
+style.css
+.fruit {
+  color: green;
+}
+
+
+<!--- 2. Selecting by Relationship------>
+<!--- 1. (space) All the sescendants should change the color
+<!--- 2. +(Plus) Adjacent Siblings()

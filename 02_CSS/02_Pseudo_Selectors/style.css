@@ -1,0 +1,19 @@
+p {
+    font-size: 18px;
+}
+
+section > :first-child {
+    background-color: rgb(255, 255, 0);
+}
+
+section > :last-child {
+    background-color: rgb(119, 141, 240);
+}
+
+ul li:nth-child(2) {
+    font-weight: bold;
+}
+
+ul li:last-child {
+    text-decoration: underline;
+}
