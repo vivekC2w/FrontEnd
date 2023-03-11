@@ -1,0 +1,27 @@
+.first-div {
+    width: 150px;
+    height: 150px;              /* Total height */
+    background-color: blue;
+    /* Total Height = ht of content + padding[top + bottom] + border [top + bottom] */
+    /* 150px = X + 10 + 10 + 10 + 10 
+            X = 140px */
+    /* Write your code here */
+    padding: 10px;
+    border: 10px solid rgb(255, 20, 147);
+    margin-left: 200px;
+    margin-top: 10px;
+
+}
+
+.second-div {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+
+    /* Write your code here */
+    padding: 5px;
+    border: 20px solid rgb(0, 0, 0);
+    margin-left: 0px;
+    
+
+}
