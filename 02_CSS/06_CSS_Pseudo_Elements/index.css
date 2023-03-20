@@ -1,0 +1,12 @@
+body {
+    line-height: 1.4;
+    font-family: system-ui;
+  }
+
+  p.first::first-line {
+    color: rgb(0, 0, 255);
+  }
+
+  li::marker {
+    color: rgb(144, 238, 144);
+  }

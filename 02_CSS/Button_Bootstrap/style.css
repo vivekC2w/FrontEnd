@@ -1,0 +1,30 @@
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    background-color: #e23f3f;
+    border: 1px solid #a10909;
+    border-radius: 4px;
+    color: #333;
+}
+
+.btn:hover,
+.btn:focus {
+  color: #333;
+  text-decoration: none;
+  background-color: #e24f4f;
+  border-color: #e20909;
+}
+
+.btn:active,
+.btn.active {
+  background-color: #e23f3f;
+  border-color: #b91a1a;
+}

@@ -1,0 +1,30 @@
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(100, 100, 100, 0.1);
+    /* opacity: 0.2; */
+}
+
+.sop {
+    border: 1px solid black;
+}
+.item1 {
+    width: 100px;
+    background-color: royalblue;
+}
+
+.item2 {
+    background-color: yellowgreen;
+    width: 250px;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.item3 {
+    background-color: yellow;
+    width: 150px;
+    display: flex;
+    justify-content: space-around;
+}

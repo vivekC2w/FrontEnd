@@ -1,0 +1,11 @@
+px, rem, and % are units of measurement in CSS that are used to define sizes for various elements such as fonts, margins, and padding. Here's a brief explanation of each of them:
+
+px (pixels) - This is a fixed unit of measurement that represents a single dot on a screen. It is commonly used for defining font sizes and dimensions of elements in web design. The size of a px is dependent on the screen resolution and cannot be resized by the user.
+
+rem (root em) - This is a relative unit of measurement that is based on the root element (html tag) font-size. The size of a rem changes according to the font-size of the root element, making it a flexible and scalable unit of measurement.
+
+% (percentage) - This is a relative unit of measurement that is based on the size of the parent element. When used to define the size of an element, % represents the size of the element relative to the size of its parent. For example, setting width: 50% on a child element will make it half the width of its parent element.
+
+The main difference between these units is that px is an absolute unit of measurement, whereas rem and % are relative units of measurement. px is fixed and cannot be changed, while rem and % can be scaled up or down depending on the font-size or size of the parent element, respectively.
+
+In general, it's recommended to use relative units (rem and %) when possible, as they can create more responsive and flexible designs that adapt to different screen sizes and user preferences.
