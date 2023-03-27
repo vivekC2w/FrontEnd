@@ -1,3 +1,4 @@
+
 html body {
     padding: 0;
     margin: 0;
@@ -11,20 +12,21 @@ html body {
 
 .unorderedList {
     list-style-type: none;
-}
-
-.navigation {
-    list-style-type: none;
     background-color: violet;
-
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     flex-wrap: wrap;
 }
 
-.navigation a:hover {
-    background-color: red;
+.navigation {
+    /* list-style-type: none; */
+    background-color: violet;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: wrap;
 }
 
 /* Anchor tags acts as inline elements */
@@ -36,16 +38,21 @@ html body {
     padding: 15px;
 }
 
+.navigation a:hover {
+    background-color: red;
+}
+
 .main-container {
     display: flex;
     flex-direction: row;
-
+    /* transition: 5s; */
 }
 
 .main-container .main_content {
     background-color: yellowgreen;
     display: flex;
     flex-direction: column;
+    /* padding: 10px; */
 }
 
 .main-container .leftNav {
@@ -79,3 +86,35 @@ html body {
     display: flex;
 }
 
+p {
+    padding: 10px;
+}
+
+@media screen and (max-width: 800px) {
+    .top-container {
+        display: flex;
+        flex-direction: row;
+    } 
+
+    .unorderedList {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .unorderedList li {
+        width: 100%;
+    }
+
+    .main-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .leftNav ul {
+        width: 100%;
+    }
+
+    .unorderedList {
+        justify-content: flex-start;
+    }
+}

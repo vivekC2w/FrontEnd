@@ -1,0 +1,30 @@
+
+.child {
+    height: auto;
+    border: 1px solid black;
+    background-color: burlywood;
+}
+
+/* 200px 100px */
+.container-parent {
+    display: grid;
+    grid-template-columns: 200px 100px;
+    /* grid-template-columns: 2fr 1fr;         responsive */
+    /* grid-template-columns:  repeat(4, 120px); */
+    grid-template-rows: minmax(150px, auto);
+}
+
+.item1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+} 
+
+.item3 {
+    grid-row-start: 2;
+    grid-row-end: 5;
+}
+
+/* Separation in rows and columns */
+.container-parent {
+    grid-gap: 16px;
+}

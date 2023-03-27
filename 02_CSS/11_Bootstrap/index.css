@@ -1,0 +1,17 @@
+.mycolor {
+    background-color: green;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    background-color: red;
+}
+
+.item {
+    width: 50px;
+    height: 20px;
+    background-color: yellow;
+    border: 1px solid black;
+}
