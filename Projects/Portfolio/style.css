@@ -1,0 +1,23 @@
+.intro-text {
+    /* font-size: ; */
+    text-align: center;
+}
+
+.image{
+
+}
+
+.blackBox {
+    /*  */
+    background-color: black;
+    color: white;
+}
+
+.contact {
+    background-color: green;
+}
+
+.aboutme{
+    background-color: brown;
+}
+
