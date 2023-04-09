@@ -1,0 +1,115 @@
+#app {
+  height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#calc {
+  background-color: #f7f7f7;
+  width: 350px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+button {
+  appearance: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  cursor: pointer;
+  color: #444;
+  font-size: 24px;
+  padding: 10px 20px;
+  transition: all 0.1s ease-in-out;
+  /* background: linear-gradient(#FDFDFD, #F0F0F0); */
+}
+
+button:hover {
+    background-color: #e7e7e7;
+    border-color: #999;
+    color: #333;
+}
+
+button:active {
+  background-color: #ddd;
+  border-color: #999;
+  color:#333;
+  box-shadow: none;
+}
+
+.display {
+  background-color: #222;
+  color: #fff;
+  font-size: 40px;
+  padding: 10px;
+  text-align: right;
+}
+
+#ops {
+  margin: 15px;
+  display: flex;
+}
+
+#ops button {
+  flex-grow: 1;
+  margin-left: 10px;
+  height: 50px;
+  width: 50px;
+  font-size: 40px;
+}
+
+#ops button:first-of-type {
+  margin-left: 0px;
+}
+
+#mid {
+  display: flex;
+}
+
+#mid .btns {
+  display: flex;
+  margin-bottom: 15px;
+  /* margin-left: 15px; */
+}
+
+#mid .btns button {
+  margin-left: 15px;
+  height: 40px;
+  flex-grow: 1;
+}
+
+#mid .btns button:first-of-type {
+  margin-left: 0px;
+}
+
+.equal {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.equal button {
+  width: 65px;
+  margin-left: 15px;
+  background: #007bff;
+  color: #fff;
+  font-size: 24px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  transition: all 0.1s ease-in-out;
+}
+
+.equal button:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+  color: #fff;
+}
+
+.equal button:active {
+  background-color: #005cbf;
+  border-color: #005cbf;
+  color: #fff;
+  box-shadow: none;
+}

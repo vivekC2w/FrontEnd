@@ -64,5 +64,39 @@ delete car.powerWheels;
 
 //-----------------------------------Arrays ----------------------
 
-let arr = [1, 2, "abcd", true, 'c']
+// let arr = [1, 2, "abcd", true, 'c']
+// console.log(arr);
+
+// let char = 'c';
+// let charStr = "c";
+
+//get
+// console.log(arr[0], arr[1], arr[2]);
+
+// //edit
+// arr[0] = "start"
+
+// console.log(arr);
+
+// console.log(arr.length, "length of array");
+
+// //weird thing
+// arr.length = 0; 
+
+//------------- array properties -------------
+
+//1. push
+let arr = [1, 2, 3, 4];
+arr.push(5);
+
 console.log(arr);
+
+//2. pop -> removes the last element
+arr.pop();
+
+console.log(arr)
+
+// 3. forEach -> removes the first element
+arr.shift()  
+
+console.log(arr)
