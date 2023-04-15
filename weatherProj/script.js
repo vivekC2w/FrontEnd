@@ -64,17 +64,51 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Display weather data in the table row
-  if (row) {
-    cloud_pct.innerHTML = row.querySelector("td:nth-child(1)").innerHTML;
-    feels_like.innerHTML = row.querySelector("td:nth-child(2)").innerHTML;
-    humidity.innerHTML = row.querySelector("td:nth-child(3)").innerHTML;
-    max_temp.innerHTML = row.querySelector("td:nth-child(4)").innerHTML;
-    min_temp.innerHTML = row.querySelector("td:nth-child(5)").innerHTML;
-    sunrise.innerHTML = row.querySelector("td:nth-child(6)").innerHTML;
-    sunset.innerHTML = row.querySelector("td:nth-child(7)").innerHTML;
-    temp.innerHTML = row.querySelector("td:nth-child(8)").innerHTML;
-    wind_degrees.innerHTML = row.querySelector("td:nth-child(9)").innerHTML;
-    wind_speed.innerHTML = row.querySelector("td:nth-child(10)").innerHTML;
-  }
+  // Define an array of city names to fetch weather data for
+  const cities = [
+    "Tokyo",
+    "New York City",
+    "Paris",
+    "London",
+    "Sydney",
+    "Mumbai",
+  ];
+
+  // Loop through the cities and fetch their weather data
+  cities.forEach((city) => {
+    fetch(
+      `https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?location=${city}`,
+      options
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        // Update the table cells with the weather data for this city
+        document.getElementById(`${city.toLowerCase()}_cloud_pct`).textContent =
+          data.cloud_pct;
+        document.getElementById(
+          `${city.toLowerCase()}_feels_like`
+        ).textContent = data.feels_like;
+        document.getElementById(`${city.toLowerCase()}_humidity`).textContent =
+          data.humidity;
+        document.getElementById(`${city.toLowerCase()}_max_temp`).textContent =
+          data.max_temp;
+        document.getElementById(`${city.toLowerCase()}_min_temp`).textContent =
+          data.min_temp;
+        document.getElementById(`${city.toLowerCase()}_sunrise`).textContent =
+          data.sunrise;
+        document.getElementById(`${city.toLowerCase()}_sunset`).textContent =
+          data.sunset;
+        document.getElementById(`${city.toLowerCase()}_temp`).textContent =
+          data.temp;
+        document.getElementById(
+          `${city.toLowerCase()}_wind_degrees`
+        ).textContent = data.wind_degrees;
+        document.getElementById(
+          `${city.toLowerCase()}_wind_speed`
+        ).textContent = data.wind_speed;
+      })
+      .catch((error) => {
+        console.error(`Error fetching weather data for ${city}: ${error}`);
+      });
+  });
 });
