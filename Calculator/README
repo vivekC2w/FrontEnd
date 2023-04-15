@@ -1,0 +1,26 @@
+Project Name - Calculator
+
+This project is a simple calculator built with HTML, CSS (using grid layout), and JavaScript. The calculator has basic arithmetic operations 
+like addition, subtraction, multiplication, and division. 
+
+Getting Started
+To run the project, simply open the index.html file in your web browser.
+
+Prerequisites
+To run this project, you will need a web browser.
+
+Built With
+1. HTML
+2. CSS (using grid layout)
+3. JavaScript
+
+Features
+1. Basic arithmetic operations
+2. Responsive design
+
+How to Use
+1. Enter a number using the number buttons
+2. Select an arithmetic operation
+3. Enter a second number
+4. Press the equals button to see the result
+5. To clear the input, press the clear button(AC).
