@@ -1,0 +1,15 @@
+#grandParent {
+    background-color: lightblue;
+    padding: 20px;
+  }
+  
+  #parent {
+    background-color: lightgreen;
+    padding: 20px;
+  }
+  
+  #child {
+    background-color: pink;
+    padding: 20px;
+  }
+  

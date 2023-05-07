@@ -236,7 +236,7 @@
 
 //7.  array.reduce
 
-let sumArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// let sumArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 // let sum = 0;
 
@@ -250,14 +250,14 @@ let sumArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 //You can give 2 things to reduce
 //reduce( () => {}, )
-let ans = sumArr.reduce((accumulator, value) => {
-  return accumulator + value;
-}, 1);
+// let ans = sumArr.reduce((accumulator, value) => {
+//   return accumulator + value;
+// }, 1);
 
-console.log("Accumulator", ans);
+// console.log("Accumulator", ans);
 
 //odd numbers from array using resuce
-const number = [1, 2, 3, 4, 5];
+// const number = [1, 2, 3, 4, 5];
 
 // const oddNumbers = number.reduce((acc, curr) => {
 //   if (curr % 2 !== 0) {
@@ -279,15 +279,142 @@ const number = [1, 2, 3, 4, 5];
 
 // console.log(sumOfOddNums);
 
-const arr2 = [1, 2, 3, 4, 5];
+// const arr2 = [1, 2, 3, 4, 5];
 
-const newArr = arr2.reduce((acc, currentValue) => {
-  acc.push(currentValue * 2);
+// const newArr = arr2.reduce((acc, currentValue) => {
+//   acc.push(currentValue * 2);
+//   return acc;
+// }, []);
+
+// console.log(newArr);
+
+// let arr1 = [1, 2, 3, 4];
+// let copyArray = arr1.slice();
+
+//------------------Map--------------------
+
+const arr = [5, 1, 3, 2, 6];
+
+// If we want to transorm array we use map
+
+//Double = [10, 2, 6, 4, 12];
+//Triple = [15, 3, 9, 18];
+//Binary = ["101", "1", "11", "10", "110"]
+
+// function double(x) {
+//   return x * 2;
+// }
+
+// function triple(x) {
+//   return x * 3;
+// }
+
+// function binary(x) {
+//   return x.toString(2);
+// }
+
+// const output = arr.map((x) => x.toString(2));
+
+// const output = arr.map(double);
+
+// console.log(output);
+
+//-------------------filter------------------
+//if we want to filter elements from array
+
+//1. filter odd values
+
+// function isOdd(x) {
+//   return x % 2;
+// }
+
+// const output = arr.filter(isOdd);
+
+// console.log(output); //[ 5, 1, 3 ]
+
+//2. filter numbers greater than 4
+// const output = arr.filter((x) => {
+//   return x > 4;
+// });
+
+// const output = arr.filter((x) => x > 4);
+
+// console.log(output); //[ 5, 6 ]
+
+//----------------------Reduce-----------------
+//to find sum or maximum number in array
+
+// function findSum(arr) {
+//   let sum = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     sum = sum + arr[i];
+//   }
+//   return sum;
+// }
+
+//Transforming this logic to reduce
+
+// const output = arr.reduce(function (acc, curr) {
+//   acc = acc + curr;
+//   return acc;
+// }, 0);
+
+// console.log(output); //17
+
+//max ele
+// function findMax(arr) {
+//   let max = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] > max) {
+//       max = arr[i];
+//     }
+//   }
+//   return max;
+// }
+
+// console.log(output);
+
+// const output2 = arr.reduce(function (acc, curr) {
+//   if (curr > acc) {
+//     acc = curr;
+//   }
+//   return acc;
+// }, 0);
+
+// console.log(output2); //6
+
+const users = [
+  { firstName: "vivek", lastName: "hiray", age: 24 },
+  { firstName: "donald", lastName: "trump", age: 75 },
+  { firstName: "elon", lastName: "musk", age: 50 },
+  { firstName: "deepika", lastName: "padukon", age: 24 },
+];
+
+//list of full names
+// const output = users.map((x) => x.firstName + " " + x.lastName);
+
+// console.log(output); //[ 'vivek hiray', 'donald trump', 'elon musk', 'deepika padukon' ]
+
+//{ 26: 2, 75: 1, 50: 1}
+
+// const output1 = users.reduce(function (acc, curr) {
+//   if (acc[curr.age]) {
+//     acc[curr.age]++;
+//   } else {
+//     acc[curr.age] = 1;
+//   }
+//   return acc;
+// }, {});
+
+// console.log(output1); //{ '24': 2, '50': 1, '75': 1 }
+
+//first name of peoples whos age is less than 30
+
+// const output = users.filter((x) => x.age < 30).map((x) => x.firstName);
+
+const output1 = users.reduce(function (acc, curr) {
+  if (curr.age < 30) acc.push(curr.firstName);
   return acc;
 }, []);
 
-console.log(newArr);
-
-
-let arr1 = [1, 2, 3, 4];
-let copyArray = arr1.slice();
+console.log(output1); //[ 'vivek', 'deepika' ]

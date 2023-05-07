@@ -1,0 +1,15 @@
+#paragraph {
+
+}
+
+p {
+    color: red;
+}
+
+div > p {
+    color: green;
+}
+
+/* #card {
+    color: red;
+} */

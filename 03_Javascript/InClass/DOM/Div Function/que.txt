@@ -1,0 +1,8 @@
+The div function
+Write a JavaScript function createDiv(width, height, text) that creates and adds a new div element inside the 
+#container div with the specified width and height. The div element should have text as its text content.
+
+Note: Do not modify the HTML code
+
+Note: width and height which are passed as arguments to the createDiv function do not contain the unit. 
+Make sure to add the unit of "px" to it before setting the values
