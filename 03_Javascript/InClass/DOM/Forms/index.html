@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+  </head>
+  <body>
+    <h1>Forms</h1>
+
+    <form id="forms">
+      <lable for="name">Name:</lable>
+      <input name="name" value="Enter your name" type="text" id="name" />
+      <br />
+      <lable for="nameagain">Enter Name Again:</lable>
+      <input name="nameagain" type="text" id="nameagain" />
+      <br />
+      <label for="class">Class</label>
+      <select id="class">
+        <option value="1">1st</option>
+        <option value="1">2nd</option>
+        <option value="1">3rd</option>
+        <option value="1">4th</option>
+        <option value="1">5th</option>
+      </select>
+      <br />
+      <label>
+        Gender:
+        <input type="radio" name="gender" value="male" /> Male
+        <input type="radio" name="gender" value="female" /> Female
+        <input type="radio" name="gender" value="other" /> Other
+      </label>
+      <br />
+      <button type="submit" id="button">Submit</button>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>

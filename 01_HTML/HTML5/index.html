@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML5</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Why HTML5 -->
+    <!-- HTML5 Introduces a number of new elements and attributes that helps in building a modern websites -->
+    <!-- The DOCTYPE declaration for HTML5 is very simple -->
+    <!-- <!DOCTYPE html> -->
+
+    <!-- The charcter encosing (charset)declaration is also very simple -->
+    <!-- <meta charset="UTF-8"> -->
+
+    <!-- HTML5 is supported in all modern browsers. -->
+    <!-- Tag                     Description
+    <article>               Delines an article in a document
+    <aside>                 Defines content aside from the page content
+    <details>               Defines additional details that the user can view or hide
+    <figure>/<figcaption>   Defines self-contained content/Defines a caption for a <figure> element
+    <footer>                Defines a footer for a document or section
+    <header>                Defines a header for a document or section
+    <main>                  Defines the main content of a document
+    <nav>                   Defines navigation links
+    <progress>              Represents the progress of a task
+    <section>               Defines a section in a document
+    <summary>               Defines a visible heading for a <details> element
+    <wbr>                   Defines a possible line-break -->
+
+    <!-- HTML5 Semantic Elements -->
+    <!-- Semantic Elements = elements with a meaning -->
+    <!-- A semantic element clearly descriebs its meaining to both the browser and the developer -->
+    <!-- Examples of non-semantic elemenst: <div> and <spans> - Tells nothing about its content. -->
+    <!-- Examples of semantic elements: <form>, <footer>, and <article>- Clearify defines its content. -->
+
+    <!-- <header>
+      <h2>Maharashtra Times</h2>
+    </header>
+
+    <nav>
+      <ul>
+        <li>News</li>
+        <li>Sports</li>
+        <li>Weather</li>
+        <li>Tech</li>
+        <li>Business</li>
+        <li>Bollywood</li>
+      </ul>
+    </nav>
+
+    <section>
+      <h2>News Section</h2>
+      <article>
+        <h2>News Article</h2>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta iusto
+          consequatur, deleniti laborum harum exercitationem asperiores tenetur
+          aliquam, itaque cupiditate omnis reprehenderit ad hic provident
+          dolorem? Enim veniam totam odit neque ipsa magni officiis, eos error
+          possimus tempora. Officiis, fugiat!
+        </p>
+      </article>
+
+      <article>
+        <h2>News Article</h2>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta iusto
+          consequatur, deleniti laborum harum exercitationem asperiores tenetur
+          aliquam, itaque cupiditate omnis reprehenderit ad hic provident
+          dolorem? Enim veniam totam odit neque ipsa magni officiis, eos error
+          possimus tempora. Officiis, fugiat!
+        </p>
+      </article>
+    </section>
+
+    <footer>@Maharshtra Times All rights reserved</footer> -->
+
+    <!-- HTML5 Input types -->
+    <!-- color date datetime datetime-local email month number range search tel 
+    time url week -->
+
+    <!-- What is HTML Canvas? -->
+    <!-- The HTML <canvas> element is used to draw graphics on a web page via javascript-->
+    <!-- The <canvas> element is only a container for graphics. You must use javascript to actual draw the graphics-->
+
+    <!-- Canvas has several methods for drawing paths, boxes, circles, text, and adding images -->
+
+    <!-- Rectangle -->
+    <!-- To create a rectangle using HTML5 canvas, we can use the rect() method. Canvas rectangle 
+        is positioned with x and y parameters, and is sized with width and height parameters. -->
+
+    <!-- <canvas
+      id="myCanvas"
+      width="588"
+      height="200"
+      style="border: 1px solid #000000"
+    ></canvas> -->
+
+    <!--
+        getContext() method returns an object that provides methods and properties
+        for drawing on the canvas.
+        moveTo() method moves the path to the specified point in the canvas,
+        without creating a line
+        linTo() adds a new point and creates a line TO that point FROM the last specified point 
+        in the canvas
+        Use the stroke() method to actually draw the path on the canvas
+    -->
+
+    <!-- What is HTML5 SVG 
+        Sclabale Vector Graphics
+        SVG is used to define graphics for the web
+        SVG is a W3C recommendation
+
+        Rectangle<rect> Circle<cir> Ellipse<ellipse> Line<line> 
+    -->
+    <!-- Its a vector image never compromises -->
+    <svg height="100" width="100">
+      <circle cx="50" cy="40" stroke="black" stroke-width="3" fill="red" />
+    </svg>
+
+    <script>
+      var c = document.getElementById("myCanvas");
+      var context = c.getContext("2d");
+      //   ctx.moveTo(0, 0);
+      //   ctx.lineTo(200, 100);
+      //   ctx.stroke();
+
+      // create rectangle
+      context.beginPath();
+      context.rect(100, 50, 200, 100);
+      context.fillStyle = "orange";
+      context.fill(); //to fill the inside color of the box.
+      context.lineWidth = 2;
+      context.strokeStyle = "black";
+      context.stroke(); //to fill the border color
+    </script>
+  </body>
+</html>
