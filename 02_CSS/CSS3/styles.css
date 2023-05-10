@@ -1,0 +1,116 @@
+.text_effects {
+    text-shadow: 2px 2px 2px blue;          /* horizontal offset, vertical offset, blur, color */
+}
+
+#word_wrap {
+    word-wrap:break-word;
+    width: 150px;
+    border:1px solid #ff0000;
+}
+
+#no_wrap {
+    width:150px;
+    border:1px solid #ff0000;
+}
+
+@font-face {
+    font-family: kuchbhi;
+    src:url('NatureBeautyPersonalUse-9Y2DK.ttf')
+}
+
+.font_text {
+    font-family: kuchbhi;
+}
+
+/* animation in css3 */
+
+.batman_run {
+    width:100%;
+    height: 100px;
+    background-color: aliceblue;
+    position: relative;
+}
+
+.batman_run img{
+    width: 140px;
+    height: 120px;
+    position: absolute;
+    left:0;
+    top: -15px;
+    animation-name: batmanRunning;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes batmanRunning {
+    from{left: 0}
+    to{left: 85%}
+}
+
+/* Transition in css3 */
+.batman_class {
+    width: 50px;
+    height: 50px;
+    /* transition-property: width, height; */
+    transition-property: transform;
+    transition-duration: 1s;
+}
+
+.batman_class:hover {
+    /* width:100px;
+    height: 100px; */
+    transform: scale(2, 2);
+}
+
+/* Multiple columns in css3 */
+.about_para {
+    column-count: 3;
+    column-gap: 50px;
+    column-rule: dashed;
+    /* column-rule-color: #ff0000; */
+    text-align: justify;
+}
+
+.myBackground_css {
+    width: 300px;
+    height: 300px;
+    background-image: url('logo.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.box_sizing {
+    width: 300px;
+    height: 100px;
+    background-color: black;
+    /* padding-left: 30px; */
+    box-sizing: border-box;
+}
+
+.box_sizing p {
+    color: white;
+    transform: translateX(50px);
+}
+
+/* linear-gradient */
+.container {
+    background-image: linear-gradient(to left, #F650FE, #607BF5);
+
+}
+
+/* Flex Box in CSS3 */
+.flex_box {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to left, #F650FE, #607BF5);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    /* flex-wrap: wrap; */
+}
+
+.flex_box .btn {
+    margin: 10px;
+}

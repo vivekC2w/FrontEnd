@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>CSS-3</title>
+  </head>
+  <body>
+    <h1>CSS-3</h1>
+
+    <!-- CSS3 brings a lot of long awaited novelties, like rounded corners, shadows, 
+        text effects or animations, as well as new layouts like multi-columns, flexible box etc. -->
+
+    <!-- Text Effects in CSS3 -->
+    <!-- A CSS3 Text Effect is a such term which is used to implement some extra features on normal text.
+        Their are mainly two properties of CSS3 Text Effects, which have been described as follows:
+        1: text-shadow - text-shadow is used to create the shadow around the text, We can change the shadow color
+        2: word-wrap - word-wrap is used to break the continued text in another line.
+        CSS3 2D Transform has introduced mainly five types of methods that has been described as follows: -->
+
+    <div id="text_shadow">
+      <h1>Text Shadow</h1>
+    </div>
+
+    <div>Below is example of Word-wrap</div>
+
+    <div id="word_wrap">
+      You can't break the line hsvcjsvdjlcgsdjbvc;ksdjbnvjksd.
+    </div>
+
+    <p>Without using word-wrap text will go like this.</p>
+
+    <div id="no_wrap">
+      you can't break the line hereeeeeeeeeeeeeeeeeeeeeeeeeeeeee.
+    </div>
+
+    <!-- Fonts in CSS3 -->
+
+    <h2 class="font_text">Hello World!!</h2>
+
+    <!-- Animation in CSS3 -->
+    <!-- An animation is such property of CSS3, which is used to animate the object, without using flash or any other animation application.
+        When the animation is created in the @keyframe, bind it to a selector, otherwise the animation will have no effect.
+        animation required. Defines the name and the duration of the animation.
+        keyframes-selector  Required.Percentage of the animation duration
+
+    -->
+
+    <div class="batman_run">
+      <img src="batman-pixel-art.gif" alt="batman_running" />
+    </div>
+
+    <!-- Transition Property -->
+    <div>
+      <h1 class="text-center">
+        BATMAN <img src="batman.png" class="batman_class" />
+      </h1>
+    </div>
+
+    <!-- Multiple columns property -->
+    <!-- Multiple Columns is such an advance feature of CSS3 which is used for creating the newspaper layout. You can create your article to muliple columns,
+    even if it is in one paragraph 
+        Three properties:
+        1. column-count
+        2. column-rule
+        3. column-gap    
+
+    -->
+
+    <section class="container">
+      <h1 class="more_about_us" style="text-align: center">More about us</h1>
+      <div class="about_para">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam,
+          nostrum? Quod in vel laboriosam quaerat asperiores. Perspiciatis nisi
+          ad dolor reprehenderit quo illo quas rerum. Error molestiae rem, in
+          laudantium similique inventore minima quia quo, pariatur sapiente
+          alias placeat? Enim asperiores ab distinctio quod repellat? Itaque
+          libero autem sit rerum quia distinctio saepe blanditiis, temporibus
+          ea, eveniet unde placeat eligendi officiis mollitia. Numquam quibusdam
+          doloribus debitis sit sapiente, dolores ab iusto quas corporis, alias
+          beatae error magni dolorem. Magni ea id ab sequi quae suscipit hic,
+          facere sunt aspernatur deserunt.
+        </p>
+      </div>
+    </section>
+
+    <!-- Background in css3 -->
+    <div class="myBackground_css"></div>
+
+    <!-- Borders in CSS3 -->
+    <!-- Border-radius 
+        Box-Shadow
+    -->
+
+    <!-- User Interface in CSS3
+    1. resize used in text area in forms
+    2.box-sizing 
+    width + padding + border = actual width of an element
+    height + padding + border = actual height of an element
+    3. Outline-Offset -->
+    <div class="box_sizing">
+      <p>Box Sizing is important</p>
+    </div>
+
+    <!-- translate() method, the element moves from its current position, depending on the parameters given for the left (X-axis) and the top (Y-axis) position
+    the rotate() method, the element rotates clockwise at a given degree. Negative values are allowed and rotates the element counter-clockwise.
+    the scale() method, the element increases or decreases the size, depending on the parameters given for the width (X-axis) and the height (Y-axis).
+    the skew() method, the element turns in a given angle, depending on the parameters given for the horizontal (X-axis) and the vertical (Y-axis) lines.
+    The matrix() method combines all of the 2D transform methods into one -->
+
+    <!-- Flex Box -->
+    <section>
+      <div class="flex_box">
+        <div><button class="btn">Like</button></div>
+        <div><button class="btn">Share</button></div>
+        <div><button class="btn">Subscribe</button></div>
+      </div>
+    </section>
+  </body>
+</html>
