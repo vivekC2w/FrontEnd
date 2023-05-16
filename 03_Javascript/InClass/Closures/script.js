@@ -19,3 +19,5 @@ function foo() {
 }
 
 let result = foo();
+result();   //11
+result();   //11 12
