@@ -23,14 +23,23 @@
 // While expires
 // Callback
 
-console.log("Start");
+// console.log("Start");
 
-setTimeout(function cb() {
-  console.log("Callback");
-}, 0);
+// setTimeout(function cb() {
+//   console.log("Callback");
+// }, 0);
 
-console.log("End");
+// console.log("End");
 
 // Start
 // End
 // Callback
+
+//SetTimeout eait for x seconds then going to execute your function()
+console.log("a");
+
+setTimeout(function cb() {
+  console.log("c");
+}, 0);
+
+console.log("b");

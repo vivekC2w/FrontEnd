@@ -7,7 +7,7 @@ let obj = {
   class: "9th Class",
   [key]: "Parent 1 Parent 2",
 };
-console.log(obj);
+// console.log(obj);
 //get
 // console.log(obj.name); //Vivek
 // console.log(obj["rollNumber"]); //1
@@ -31,7 +31,7 @@ obj["newProperty"] = 12;
 
 delete obj.rollNumber;
 
-console.log(obj);
+// console.log(obj);
 
 //Copy of an object
 // *******************************************************************************
@@ -60,7 +60,64 @@ let a = {
 let b = {};
 Object.assign(b, a);
 
-console.log(a === b); //false
+// console.log(a === b); //false
+
+const sourceObj1 = { name: "akash", class: 9 };
+const sourceObj2 = { name: "vijay", class: 10 };
+const targetObj = {};
+
+Object.assign(targetObj, sourceObj1, sourceObj2);
+
+// console.log(targetObj);
+// [[Prototype]]: Object
+
+//Object.create
+//-> 1st way to create obj
+const person = {
+  name: "blah",
+  rollNumber: 12,
+};
+
+//-> 2nd way to create object
+
+//name and rollNumber -> these properties will be created but in prototype
+//i.e., these properties are not own properties
+
+const newPerson = Object.create(person);
+
+console.log("person", person); //person { name: 'blah', rollNumber: 12 }
+console.log("newPerson", newPerson); //newPerson {}
+
+console.log(person.name, newPerson.name);
+
+// 3. Object.getOwnPropertyNames()
+
+const personOwnPropArr = Object.getOwnPropertyNames(person);
+const newPersonOwnPropArr = Object.getOwnPropertyNames(newPerson);
+
+console.log(personOwnPropArr, newPersonOwnPropArr); //[ 'name', 'rollNumber' ] []
+
+//4. Object.keys()
+
+const keysPerson = Object.keys(person);
+
+console.log(keysPerson); //[ 'name', 'rollNumber' ]
+
+//5. Object.values
+
+const valuesPerson = Object.values(person);
+
+console.log(valuesPerson); //[ 'blah', 12 ]
+
+//6.Object.entries()
+
+const keyValPerson = Object.entries(person);
+
+console.log(keyValPerson); //[ [ 'name', 'blah' ], [ 'rollNumber', 12 ] ]
+
+for (const [key, value] of keyValPerson) {
+  console.log(`${key} : ${value}`);
+}
 
 // ***************************************************************************
 //================================DEEP COPY=================================

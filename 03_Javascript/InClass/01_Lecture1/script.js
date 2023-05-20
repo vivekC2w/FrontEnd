@@ -1,9 +1,20 @@
-console.log("Hello World");
+// console.log("Hello World");
 
-// echo "# Javascript_FSD" >> README.md
-// git init
-// git add README.md
-// git commit -m "first commit"
-// git branch -M main
-// git remote add origin https://github.com/vivekC2w/Javascript_FSD.git
-// git push -u origin main
+//---------------------String Literal ----------------------------
+
+const variable = 1;
+
+const str1 = "str1";
+const str2 = "str2";
+
+const str3 = `Hey your age is ${variable}`;
+
+// console.log(str3);
+
+// -------------------------Async Javascript-------------------
+
+setTimeout(() => {
+  console.log("Hello Vivek");
+}, 5000);
+
+console.log("bye")
