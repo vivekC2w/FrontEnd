@@ -1,7 +1,10 @@
 //PROMISE CREATION
 //1. Using constructor
-// const myFetch = new Promise((resolve, reject) => {
-
+const myFetch = new Promise((resolve, reject) => {
+    //1 Calling ther server
+    //const data = XMLHttpRequest
+    try
+}
 // })
 //2. To use Async Keyword
 
@@ -32,6 +35,7 @@
 // console.log(res3, " result 3");
 
 // MicrotaskQueue vs Macrotask queue
+//
 
 let promise = new Promise((resolve, reject) => {
     resolve(100);

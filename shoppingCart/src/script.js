@@ -337,3 +337,38 @@ document.addEventListener("DOMContentLoaded", function () {
   let products = Storage.getproducts();
   bag.setAttribute("item", products.length);
 });
+
+//7
+//add products event
+document.querySelectorAll(".addtocart").forEach((e) => {
+  e.onclick = (evt) => {
+    let id = evt.target.getAttribute("productid");
+    let price = evt.target.previousElementSibling.innerHTML;
+    let image =
+      evt.target.parentElement.previousElementSibling.previousElementSibling.getAttribute(
+        "src"
+      );
+    let title = evt.target.parentElement.previousElementSibling.innerHTML;
+    let product = new Product(id, title, price, image);
+    let products = Storage.getproducts();
+    let ids = Object.values(products).map((r) => r.id);
+
+    if (ids.includes(id)) return;
+    else {
+      Storage.addtolocalstorage(product);
+      Ui.displayproducts(product);
+      bag.setAttribute("items", Storage.getproducts().length);
+    }
+  };
+});
+
+//remove the product
+
+document.querySelector(".pccontainer").onclick = (e) => {
+  if (e.target.classList.contains("delete")) {
+    let id = e.target.getAttribute("productid");
+    Storage.removeproduct(id);
+    Ui.removeproduct(e.target);
+    bag.setAttribute("items", Storage.getproducts().length);
+  }
+};
