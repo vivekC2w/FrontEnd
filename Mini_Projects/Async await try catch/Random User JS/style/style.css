@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+#user-data {
+    margin-top: 30px;
+}
+
+#full-name {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#user-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+#additional-info {
+    display: none;
+    margin-top: 30px;
+}
+
+#additional-info h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#info-content {
+    font-size: 18px;
+}

@@ -1,0 +1,28 @@
+/* Styling for buttons */
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  /* Styling for page indicator */
+  #page_indicator {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for issue container */
+  #issue_container {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #issue_container li {
+    margin-bottom: 5px;
+  }
+  
+  
