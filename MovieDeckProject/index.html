@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Desk</title>
+    <link rel="stylesheet" href="./style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" style="text-decoration: none">
+        <h1 style="color: white">Movie Deck</h1>
+      </a>
+
+      <div class="contacts">AboutUs</div>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input type="search" id="search-input" placeholder="Enter your query" />
+    </div>
+
+    <!-- Sorting Bar -->
+    <div class="sorting-options">
+      <button class="sorting-button" id="sort-by-date">
+        Sort By Date(oldest to latest)
+      </button>
+      <button class="sorting-button" id="sort-by-rating">
+        Sort By Rating(least good)
+      </button>
+    </div>
+
+    <!-- Main Section -->
+    <div class="main">
+      <!-- Tabs -->
+      <div class="tab">
+        <button class="all-tab">All</button>
+        <button class="favourites-tab">Favorites</button>
+      </div>
+
+      <!-- main movie list -->
+      <div class="movies-card-container">
+        <div class="card">
+          <section>
+            <img src="" alt="placeholder for movie" />
+          </section>
+
+          <p class="title">Dummy movie Name</p>
+
+          <section class="votes-favourites">
+            <section class="votes">
+              <p class="vote-count">Votes: 99/100</p>
+              <p class="vote-rating">Rating: Good</p>
+            </section>
+
+            <section class="favorites">
+              <i class="fas fa-heart" style="font-size: 24px; color: red"></i>
+            </section>
+          </section>
+        </div>
+        <div class="item2">item2</div>
+        <div class="item3">item3</div>
+        <div class="item4">item4</div>
+
+        <div class="item5">item5</div>
+        <div class="item6">item6</div>
+        <div class="item7">item7</div>
+        <div class="item8">item8</div>
+      </div>
+      <div class="pagination">
+        <button id="prev-button">Previous</button>
+        <button id="current-page-button">Current Page:</button>
+        <button id="next-button">Next</button>
+      </div>
+    </div>
+
+    <footer>
+      <div>@copyright: 1996 Movie Deck</div>
+      <div>Contact: +91 9834738011</div>
+    </footer>
+  </body>
+</html>
