@@ -1,3 +1,26 @@
+//States
+
+let currentPage = 1;
+let lastPage = 100;
+
+//Selectors
+const movieCardContainer = document.getElementById("movies-card-container");
+const prevButton = document.getElementById("prev-button");
+const nextButton = document.getElementById("next-button");
+const pageNumberButton = document.getElementById("current-page-button");
+
+// ---- Search Selector
+const searchButton = document.getElementById("search-button");
+const searchInput = document.getElementById("search-input");
+
+const sortByDateButton = document.getElementById("sort-by-date");
+const sortByRatingButton = document.getElementById("sort-by-rating");
+
+const favoritesButton = document.querySelector(".favorites-tab");
+// const moviesCardContainer = document.getElementById('movies-card-container');
+// const sortByDateButton = document.getElementById('sort-by-date');
+// const sortByRatingButton = document.getElementById('sort-by-rating');
+const likeButtons = document.getElementsByClassName("like-button");
 //----  Fetch the movies from certain page..
 
 async function fetchMovie(pageNumber) {
@@ -15,13 +38,15 @@ async function fetchMovie(pageNumber) {
     const response = await fetch(url, options);
     let data = await response.json();
 
-    data = remapData(data);
+    //Lets set the last page value
+    const { total_pages } = data;
+    lastPage = total_pages;
 
-    console.log(data, "data debug");
+    const changedData = remapData(data);
 
-    renderMovies(data);
+    renderMovies(changedData);
 
-    return data;
+    return changedData;
   } catch (error) {
     console.log("error iss here");
   }
@@ -29,8 +54,6 @@ async function fetchMovie(pageNumber) {
 
 function remapData(data) {
   const moviesList = data.results;
-
-  console.log(moviesList, "movie list is here");
 
   const modifiedMovieList = moviesList.map((movie) => {
     return {
@@ -40,17 +63,16 @@ function remapData(data) {
       popularity: movie.popularity,
     };
   });
-
-  console.log(modifiedMovieList, "modifiedMovieList list is here");
-
   return modifiedMovieList;
 }
 
-fetchMovie(1);
+fetchMovie(currentPage);
 
 // ----- rendering the movies -----------
 
 function renderMovies(moviesList) {
+  //Clearing the older movies in the grid layout
+  movieCardContainer.innerHTML = "";
   moviesList.forEach((movie) => {
     const { popularity, posterPath, title, voteAverage } = movie;
 
@@ -59,12 +81,6 @@ function renderMovies(moviesList) {
     cardDiv.classList.add("card");
 
     const posterUrl = "https://image.tmdb.org/t/p/original" + posterPath;
-
-    /*
-          Instead of the section in inner html you guys can have this code 
-          I am not doing it bec i can afford this 
-          you cant !!!.
-      */
 
     // const posterUrl = 'https://image.tmdb.org/t/p/original' + posterPath
 
@@ -102,9 +118,173 @@ function renderMovies(moviesList) {
     // I need to push that UI to the DOM to the Grid container
 
     const gridContainer = document.getElementById("movies-card-container");
-    console.dir(gridContainer);
+    // console.dir(gridContainer);
     gridContainer.appendChild(cardDiv);
 
     // document.body.appendChild(cardDiv)
   });
 }
+
+//Listners
+
+//as soon as we land on page previous button should be disable as we are on page no 1 by default
+prevButton.disabled = true;
+
+nextButton.addEventListener("click", () => {
+  currentPage++;
+  //Work 1 : call API for new Page
+  fetchMovie(currentPage);
+
+  //Work 2: update the page number in the HTML
+
+  //Current Page: 1
+  pageNumberButton.innerHTML = `Current Page: ${currentPage}`;
+  if (currentPage === 1) {
+    prevButton.disabled = true;
+  } else if (currentPage === 2) {
+    prevButton.disabled = false;
+  } else if (currentPage === lastPage) {
+    nextButton.disabled = true;
+  }
+});
+
+prevButton.addEventListener("click", () => {
+  currentPage--;
+
+  fetchMovie(currentPage);
+
+  pageNumberButton.innerHTML = `Current Page: ${currentPage}`;
+  if (currentPage === 1) {
+    prevButton.disabled = true;
+  } else if (currentPage === 2 && currentPage != lastPage - 1) {
+    prevButton.disabled = false;
+  } else if (currentPage === lastPage - 1) {
+    nextButton.disabled = false;
+  }
+});
+
+async function searchMovies(movieName) {
+  try {
+    const url = `https://api.themoviedb.org/3/search/movie?query=${movieName}&api_key=047110c3c93d16b2adb02c2c1dfe6d28`;
+
+    const response = await fetch(url);
+    const data = await response.json();
+
+    const changedData = remapData(data);
+    renderMovies(changedData);
+  } catch (error) {
+    console.log("error iss here");
+  }
+}
+
+searchButton.addEventListener("click", () => {
+  const query = searchInput.value;
+  searchInput.value = "";
+  searchMovies(query);
+});
+
+sortByRatingButton.addEventListener("click", async () => {
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMTMxNDVhOTBkMmQxNzQ4YjhlOWVjMDFlODk1MTA2ZSIsInN1YiI6IjY0OTFkNmJhYzNjODkxMDBhZTUyYjMwZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.QpP1DZY3CSd2CRNgf9CSBWOxcaaXupzPo9Wd2r-_G_A",
+    },
+  };
+
+  const response = await fetch(
+    "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc",
+    options
+  );
+  const data = await response.json();
+
+  const changedData = remapData(data);
+  renderMovies(changedData);
+});
+
+// Create an array to store the favorite movies
+let favoritesList = [];
+
+// Function to handle the like button click event
+function handleLikeButtonClick(event) {
+  const movieCard = event.target.closest(".movie-card");
+  const movieId = movieCard.dataset.movieId;
+
+  // Check if the movie is already in the favorites list
+  const isFavorite = favoritesList.includes(movieId);
+
+  if (isFavorite) {
+    // Remove the movie from favorites
+    favoritesList = favoritesList.filter((id) => id !== movieId);
+    event.target.classList.remove("liked");
+  } else {
+    // Add the movie to favorites
+    favoritesList.push(movieId);
+    event.target.classList.add("liked");
+  }
+}
+
+// Attach click event listeners to the like buttons
+Array.from(likeButtons).forEach((button) => {
+  button.addEventListener("click", handleLikeButtonClick);
+});
+
+// Function to filter movies based on the favorites list
+function filterFavorites() {
+  const allMovieCards = Array.from(movieCardContainer.children);
+
+  // Hide all movie cards
+  allMovieCards.forEach((card) => {
+    card.style.display = "none";
+  });
+
+  // Show only the favorite movie cards
+  favoritesList.forEach((movieId) => {
+    const movieCard = movieCardContainer.querySelector(
+      `.movie-card[data-movie-id="${movieId}"]`
+    );
+    if (movieCard) {
+      movieCard.style.display = "block";
+    }
+  });
+}
+
+// Function to sort movies by date (oldest to latest)
+function sortByDate() {
+  const movieCards = Array.from(movieCardContainer.children);
+  movieCards.sort((a, b) => {
+    const dateA = new Date(a.dataset.releaseDate);
+    const dateB = new Date(b.dataset.releaseDate);
+    return dateA - dateB;
+  });
+
+  // Reorder the movie cards
+  movieCards.forEach((card) => {
+    movieCardContainer.appendChild(card);
+  });
+}
+
+// Function to sort movies by rating (latest to good)
+function sortByRating() {
+  const movieCards = Array.from(movieCardContainer.children);
+  movieCards.sort((a, b) => {
+    const ratingA = parseFloat(a.dataset.rating);
+    const ratingB = parseFloat(b.dataset.rating);
+    return ratingB - ratingA;
+  });
+
+  // Reorder the movie cards
+  movieCards.forEach((card) => {
+    movieCardContainer.appendChild(card);
+  });
+}
+
+// Attach click event listener to the favorites button
+favoritesButton.addEventListener("click", filterFavorites);
+
+// Attach click event listener to the sort by date button
+sortByDateButton.addEventListener("click", sortByDate);
+
+// Attach click event listener to the sort by rating button
+sortByRatingButton.addEventListener("click", sortByRating);

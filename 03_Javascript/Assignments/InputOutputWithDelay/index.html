@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input Output With Delay</title>
+  </head>
+  <body>
+    <!-- html code goes here -->
+    <div class="container">
+      <h2>Input Box Example</h2>
+
+      <button id="toggleinputs">Toggle Inputs</button>
+
+      <div id="inputscontainer">
+        <input
+          type="text"
+          id="input1"
+          class="userinput"
+          placeholder="Enter your text here..."
+        />
+
+        <input
+          type="text"
+          id="input2"
+          class="userinput"
+          placeholder="Enter your text here..."
+          style="visibility: hidden"
+        />
+      </div>
+
+      <div id="displaycontainer">
+        <p id="textoutput" class="display"></p>
+      </div>
+
+      <p id="count"></p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

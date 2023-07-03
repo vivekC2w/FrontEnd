@@ -1,0 +1,12 @@
+.preview {
+    height: 40px;
+    border: 1px solid;
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+.keyboard {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 10px;
+}
